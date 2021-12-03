@@ -1,0 +1,84 @@
+.App
+{
+    min-height: 200px;
+    width: 600px;
+    margin: auto;
+}
+@media only screen and (max-width:600px) {
+    .App
+    {
+        width: 90vw;
+    }   
+}
+.App-wrapper
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 3px solid #bcdfe9;
+    background-color: #bcdfe9;
+    border-radius: 10px 80px ;
+    height: 100%;
+    width: 100%;
+    padding: 2rem;
+    position: relative;
+}
+.App-wrapper::after
+{
+    content:"";
+    display: block;
+    position: absolute;
+    border: 3px solid #5bb6cf;
+    background-color: #61b9d1;
+    border-radius: 10px 50px;
+    top: -14px;
+    left: 15px;
+    width: 100%;
+    height: 108%;
+    box-shadow: 1px 1px 14px rgba(255, 255, 255, .3);
+    z-index: -1;
+    animation-duration: 2.5s;
+    animation-name: moving;
+    animation-iteration-count: infinite;
+}
+@media  only screen and (max-width:600px) {
+    .App-wrapper::after
+    {
+        top: -8px;
+        left: -18px;
+    }
+}
+@keyframes moving {
+    50% {
+        transform: translateY(-10px) ;
+    }
+    100%
+    {
+        transform: translateY(0px);
+    }
+}
+.body-App
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+.header-app-Top
+{
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+header
+{
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    margin-top: 1.5rem;
+    font-weight: bold;
+    color: #3498b4;
+    justify-self: flex-start;
+    font-family: sans-serif;
+    margin-left: 1rem;
+}

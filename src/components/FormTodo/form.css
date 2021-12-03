@@ -1,0 +1,71 @@
+form
+{
+    display: flex;
+}
+@media only screen and (max-width:600px) {
+    form
+    {
+        flex-direction: column;
+    }   
+}
+.input
+{
+    display: flex;
+    border: 2px solid #5bb6cf;
+    padding: .2rem .5rem; 
+    padding-right: 0.4rem;
+    border-radius: 6px;
+    font-family: sans-serif;
+}
+@media (max-width:600px) and (min-width:400px) {
+    .input
+    {
+        margin-bottom: 1rem;
+    }   
+}
+@media only screen and (max-width : 400px) {
+    .input
+    {
+        width: 90%;
+        align-self: center;
+        margin-bottom: 1rem;
+    }   
+}
+
+input[type="text"]
+{
+    width: 230px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    color:#1d85a1 ;
+}
+.add-item
+{
+    background-color: #90caf9;
+    border: transparent;
+    border-radius: 50%;
+    outline: none;
+    font-size: 1.3rem;
+    color: #5e76c4;
+    cursor: pointer;
+    width: 28px;
+    height: 28px;
+    transition: all 100ms ease-in-out;
+}
+.add-item:hover , .add-item:focus
+{
+    background-color:#509cda ;
+    color: #90caf9;
+    animation: up-down 1.5s infinite ease-in-out ;
+}
+@keyframes up-down {
+    50% {
+        transform: translateY(-2px) ;
+    }
+    100%
+    {
+        transform: translateY(0px);
+    }
+}
