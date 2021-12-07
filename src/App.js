@@ -4,13 +4,17 @@ import imgTodo from'./checklist_117966.png';
 import Form from './components/FormTodo/form';
 import ListItems from './components/ListItems/LisItems';
 class App extends Component {
-  state = 
+  constructor()
   {
-    newtext:'',
-    Todo:
-    [
-      {text:'learn course A' , completed:false , editing:false },
-    ]
+    super();
+    this.state = 
+    {
+      newtext:'',
+      Todo:
+      [
+        {text:'learn course A' , completed:false , editing:false },
+      ]
+    }
   }
 
   // form in form.js
@@ -55,7 +59,7 @@ class App extends Component {
     // change editing
     Todos[index].editing = true
     // put newtext in input
-    this.state.newtext=Todos[index].text
+    this.newtext=Todos[index].text
     // filter by editing
     this.setState({
       Todo : Todos.filter(todo => {return(todo.editing!==true)})
@@ -94,7 +98,7 @@ class App extends Component {
       <div className="App">
         <div className="App-wrapper">
           <div className="header-app-Top">
-            <img src={imgTodo} width="50px" height="50px"/>
+            <img src={imgTodo} alt="" width="50px" height="50px"/>
             <header className="App-header">
               ToDo-S
             </header>
@@ -114,10 +118,8 @@ class App extends Component {
               {
                 return(
                 <ListItems 
-                  todoText={todo.text}
+                  todo={todo}
                   key={index}
-                  todoEditing={todo.editing}
-                  todoCompleted={todo.completed}
                   Edit={() => this.Edit(index)}
                   Delete={() => this.Delete(index)}
                   CompletedItem={() => this.CompletedItem(index)}

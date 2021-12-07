@@ -3,22 +3,22 @@ import EditIcon from './icons8-edit.svg';
 import DeleteIcon from './icons8-delete.svg';
 import CheckIcon from './check-mark-svgrepo-com (1).svg';
 
-function ListItems(props) 
+function ListItems({todo,Edit,Delete,CompletedItem}) 
 {
     return(
         <li>
-            <p className={props.todoCompleted? "Item-text completed" : "Item-text"} disabled={props.todoEditing}>
-                {props.todoText} 
+            <p className={todo.todoCompleted? "Item-text completed" : "Item-text"} disabled={todo.todoEditing}>
+                {todo.todoText} 
             </p> 
             <div className="icons">
-                <button className="iconbtn" onClick={props.Edit}>
-                    <img className="iconbtn-img" src={EditIcon} />
+                <button className="iconbtn" onClick={Edit}>
+                    <img className="iconbtn-img" alt="" src={EditIcon} />
                 </button>
-                <button className="iconbtn" onClick={props.Delete}>
-                    <img className="iconbtn-img" src={DeleteIcon} />
+                <button className="iconbtn" onClick={Delete}>
+                    <img className="iconbtn-img" alt="" src={DeleteIcon} />
                 </button>
-                <button className="iconbtn" onClick={props.CompletedItem}>
-                    <img className="iconbtn-img" src={CheckIcon}/>
+                <button className="iconbtn" onClick={CompletedItem}>
+                    <img className="iconbtn-img" alt="" src={CheckIcon}/>
                 </button>
             </div>
         </li>
