@@ -113,7 +113,7 @@ class App extends Component {
               onChange={this.inputItem}
               value={this.state.newtext} 
               onClick={this.addItem}
-              inputRef={this.inputRef}
+              ref={this.inputRef}
             />
           </div>
           

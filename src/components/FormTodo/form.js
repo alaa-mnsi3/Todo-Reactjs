@@ -1,12 +1,14 @@
+import React from 'react';
 import './form.css';
 // add btn and input
-const Form=function({inputRef,value,onChange,onClick,onSubmit})
+const Form=React.forwardRef(({value,onChange,onClick,onSubmit},ref) =>
 {
     return(
     <div>
+    
         <form onSubmit={onSubmit}>
             <div className="input">
-                <input type="text" value={value} ref={inputRef}  onChange={onChange} />
+                <input type="text" value={value} ref={ref} onChange={onChange} />
                 <button className="add-item" onClick={onClick} >
                     +
                 </button>
@@ -14,6 +16,6 @@ const Form=function({inputRef,value,onChange,onClick,onSubmit})
         </form>
     </div>
     )
-}
+})
 
 export default Form;
