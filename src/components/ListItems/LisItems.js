@@ -7,8 +7,8 @@ function ListItems({todo,Edit,Delete,CompletedItem})
 {
     return(
         <li>
-            <p className={todo.todoCompleted? "Item-text completed" : "Item-text"} disabled={todo.todoEditing}>
-                {todo.todoText} 
+            <p className={todo.completed? "Item-text completed" : "Item-text"} disabled={todo.editing}>
+                {todo.text} 
             </p> 
             <div className="icons">
                 <button className="iconbtn" onClick={Edit}>

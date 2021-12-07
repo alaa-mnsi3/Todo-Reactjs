@@ -58,10 +58,9 @@ class App extends Component {
     const Todos =[...this.state.Todo];
     // change editing
     Todos[index].editing = true
-    // put newtext in input
-    this.newtext=Todos[index].text
     // filter by editing
     this.setState({
+      newtext:Todos[index].text,
       Todo : Todos.filter(todo => {return(todo.editing!==true)})
     })
   }
