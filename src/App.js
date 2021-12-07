@@ -1,4 +1,4 @@
-import { Component } from 'react';
+import React, { Component } from 'react';
 import './App.css';
 import imgTodo from'./checklist_117966.png';
 import Form from './components/FormTodo/form';
@@ -15,6 +15,10 @@ class App extends Component {
         {text:'learn course A' , completed:false , editing:false },
       ]
     }
+    this.inputRef=React.createRef();
+  }
+  componentDidMount(){
+    this.inputRef.current.focus();
   }
 
   // form in form.js
@@ -109,6 +113,7 @@ class App extends Component {
               onChange={this.inputItem}
               value={this.state.newtext} 
               onClick={this.addItem}
+              inputRef={this.inputRef}
             />
           </div>
           

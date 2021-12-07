@@ -1,13 +1,13 @@
 import './form.css';
 // add btn and input
-const Form=function(props)
+const Form=function({inputRef,value,onChange,onClick,onSubmit})
 {
     return(
     <div>
-        <form onSubmit={props.onSubmit}>
+        <form onSubmit={onSubmit}>
             <div className="input">
-                <input type="text" value={props.value}  onChange={props.onChange} />
-                <button className="add-item" onClick={props.onClick} >
+                <input type="text" value={value} ref={inputRef}  onChange={onChange} />
+                <button className="add-item" onClick={onClick} >
                     +
                 </button>
             </div>
