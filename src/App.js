@@ -118,9 +118,7 @@ class App extends Component {
           </div>
           
           <ul className="Parent-List-items"> 
-            {this.state.Todo.map( (todo,index) => 
-              {
-                return(
+            {this.state.Todo.map( (todo,index) => (
                 <ListItems 
                   todo={todo}
                   key={index}
@@ -128,7 +126,7 @@ class App extends Component {
                   Delete={() => this.Delete(index)}
                   CompletedItem={() => this.CompletedItem(index)}
                 />
-              )})
+              ))
             }
           </ul>
         </div>
